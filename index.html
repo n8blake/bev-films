@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./public/styles/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Bev-Films</title>
@@ -13,7 +12,7 @@
 <body class="bg-black">
     <div class="flex items-center justify-between flex-wrap bg-green-600 p-6">
         <div class="flex items-center flex-shrink-0 text-gray-100 mx-auto">
-            <span class="font-bold text-5xl text-black">Bev-Films</span>
+            <span><img src="./public/assets/Bev-Films-BW.png" height='400' width='800' > </span>
         </div>
 
         
@@ -71,13 +70,13 @@
               <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
               <!-- Heroicon name: outline/home -->
               <i class="fas fa-glass-cheers fa-lg mr-3"></i>
-              Recommended Drinks
+              Recommended Pairings
             </a>
 
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
               <!-- Heroicon name: outline/users -->
               <i class="far fa-star fa-lg mr-4"></i>
-              Featured Shows/Movies
+              Featured Pairings
             </a>
 
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
@@ -85,6 +84,11 @@
               <i class="fas fa-fire fa-lg mr-6"></i>
               Popular Shows/Movies
             </a>
+
+            <ul>
+
+
+            </ul>
 
             
           </nav>
@@ -104,7 +108,7 @@
       <div class="flex flex-col h-0 flex-1 bg-gray-900">
         <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
           <div class="flex items-center flex-shrink-0 px-4">
-            <img >
+            <img src='./public/assets/Bev-Films-Colors.png'>
           </div>
           <nav class="mt-5 flex-1 px-2 bg-gray-900 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -118,13 +122,13 @@
               <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
               <!-- Heroicon name: outline/home -->
               <i class="fas fa-glass-cheers fa-lg mr-3"></i>
-              Recommended Drinks
+              Recommended Pairings
             </a>
 
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!-- Heroicon name: outline/users -->
               <i class="far fa-star fa-lg mr-4"></i>
-              Featured Shows/Movies
+              Featured Pairings
             </a>
 
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
@@ -132,6 +136,11 @@
               <i class="fas fa-fire fa-lg mr-6"></i>
               Popular Shows/Movies
             </a>
+
+            <ul>
+
+              
+            </ul>
 
             
           </nav>
@@ -153,24 +162,143 @@
 
 
     <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none" tabindex="0">
+      
       <div class="py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-4xl font-semibold text-gray-100">Recommended Drinks</h1>
+          <h1 class="text-4xl font-semibold text-gray-100">Recommended Pairings</h1>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <!-- Replace with your content -->
           <div class="py-4">
-            <div class="border-4 border-dashed border-green-600 rounded-lg h-96">
+            <div class="border-4 border-dashed border-green-600 rounded-lg h-120">
+
+              <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
+                <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+                  <div class="flex-1 flex flex-col p-8">
+                    <img class="w-40 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/OIP.jpg" alt="">
+                    <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/cosmopolitan-cocktail-750x1125.jpg" alt="">
+
+                    
+                    <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+                    <dl class="mt-1 flex-grow flex flex-col justify-between">
+                      <dt class="sr-only">Title</dt>
+                      <dd class="text-gray-500 text-sm">This movie/show is about this stuff</dd>
+                      <dt class="sr-only">Role</dt>
+                      
+                    </dl>
+                  </div>
+                  <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                      <div class="w-0 flex-1 flex">
+                        <a href="#" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                          <!-- Heroicon name: solid/mail -->
+                          <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                          <span class="ml-3">Select</span>
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+
+                <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+                  <div class="flex-1 flex flex-col p-8">
+                    <img class="w-40 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/OIP.jpg" alt="">
+                    <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/cosmopolitan-cocktail-750x1125.jpg" alt="">
+
+                    
+                    <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+                    <dl class="mt-1 flex-grow flex flex-col justify-between">
+                      <dt class="sr-only">Title</dt>
+                      <dd class="text-gray-500 text-sm">This movie/show is about this stuff</dd>
+                      <dt class="sr-only">Role</dt>
+                      
+                    </dl>
+                  </div>
+                  <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                      <div class="w-0 flex-1 flex">
+                        <a href="#" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                          <!-- Heroicon name: solid/mail -->
+                          <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                          <span class="ml-3">Select</span>
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+
+                <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+                  <div class="flex-1 flex flex-col p-8">
+                    <img class="w-40 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/OIP.jpg" alt="">
+                    <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/cosmopolitan-cocktail-750x1125.jpg" alt="">
+
+                    
+                    <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+                    <dl class="mt-1 flex-grow flex flex-col justify-between">
+                      <dt class="sr-only">Title</dt>
+                      <dd class="text-gray-500 text-sm">This movie/show is about this stuff</dd>
+                      <dt class="sr-only">Role</dt>
+                      
+                    </dl>
+                  </div>
+                  <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                      <div class="w-0 flex-1 flex">
+                        <a href="#" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                          <!-- Heroicon name: solid/mail -->
+                          <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                          <span class="ml-3">Select</span>
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+
+                <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+                  <div class="flex-1 flex flex-col p-8">
+                    <img class="w-40 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
+                    
+
+                    
+                    <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+                    <dl class="mt-1 flex-grow flex flex-col justify-between">
+                      <dt class="sr-only">Title</dt>
+                      <dd class="text-gray-500 text-sm">This movie/show is about this stuff</dd>
+                      <dt class="sr-only">Role</dt>
+                      
+                    </dl>
+                  </div>
+                  <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                      <div class="w-0 flex-1 flex">
+                        <a href="#" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                          <!-- Heroicon name: solid/mail -->
+                          <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                          <span class="ml-3">Select</span>
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+                
 
             </div>
           </div>
           <!-- /End replace -->
         </div>
+
+        
+
       </div>
 
       <div class="py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-4xl font-semibold text-gray-100">Featured Shows/Movies</h1>
+          <h1 class="text-4xl font-semibold text-gray-100">Featured Pairings</h1>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <!-- Replace with your content -->
