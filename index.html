@@ -61,10 +61,10 @@
           </div>
           <nav class="mt-5 px-2 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <form class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
-                <button class= "text-gray-300 mr-4 h-6 w-6" id='search-button' type="submit"><i class="fa fa-search "></i></button>
+            <div class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
+                <button class= "text-gray-300 mr-4 h-6 w-6" id="search-button" type="submit"><i class="fa fa-search "></i></button>
                 <input type="text" id="search-box" placeholder="Search Movies/Shows..." name="search">
-              </form>
+            </div>
             
             <a href="#" class="bg-gray-900 hover:bg-gray-700 hover:text-white group text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
               <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
@@ -85,7 +85,7 @@
               Popular Shows/Movies
             </a>
 
-            <ul>
+            <ul id="search-results">
 
 
             </ul>
@@ -113,10 +113,10 @@
           <nav class="mt-5 flex-1 px-2 bg-gray-900 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             
-            <form class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
-                <button class= "text-gray-300 mr-4 h-6 w-6" type="submit"><i class="fa fa-search "></i></button>
-                <input type="text" placeholder="Search Movies/Shows..." name="search">
-              </form>
+            <div class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
+                <button class= "text-gray-300 mr-4 h-6 w-6" id="search-button" type="submit"><i class="fa fa-search "></i></button>
+                <input type="text" id="search-box" placeholder="Search Movies/Shows..." name="search">
+            </div>
             
             <a href="#" class="bg-gray-900 hover:bg-gray-700 hover:text-white group text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
@@ -137,7 +137,7 @@
               Popular Shows/Movies
             </a>
 
-            <ul>
+            <ul id="search-results">
 
               
             </ul>
@@ -334,4 +334,7 @@
 
 
 </body>
+<script src="public/scripts/DrinkClass.js"></script>
+<script src="public/scripts/MovieClass.js"></script>
+<script src="public/scripts/MovieSearch.js"></script>
 </html>
