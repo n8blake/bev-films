@@ -61,10 +61,6 @@
           </div>
           <nav class="mt-5 px-2 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <div class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
-                <button class= "text-gray-300 mr-4 h-6 w-6" id="search-button" type="submit"><i class="fa fa-search "></i></button>
-                <input type="text" id="search-box" placeholder="Search Movies/Shows..." name="search">
-            </div>
             
             <a href="#" class="bg-gray-900 hover:bg-gray-700 hover:text-white group text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
               <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
@@ -79,11 +75,7 @@
               Featured Pairings
             </a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
-              <!-- Heroicon name: outline/folder -->
-              <i class="fas fa-fire fa-lg mr-6"></i>
-              Popular Shows/Movies
-            </a>
+            
 
             <ul id="search-results">
 
@@ -112,11 +104,7 @@
           </div>
           <nav class="mt-5 flex-1 px-2 bg-gray-900 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            
-            <div class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
-                <button class= "text-gray-300 mr-4 h-6 w-6" id="search-button" type="submit"><i class="fa fa-search "></i></button>
-                <input type="text" id="search-box" placeholder="Search Movies/Shows..." name="search">
-            </div>
+         
             
             <a href="#" class="bg-gray-900 hover:bg-gray-700 hover:text-white group text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
@@ -131,11 +119,7 @@
               Featured Pairings
             </a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-              <!-- Heroicon name: outline/folder -->
-              <i class="fas fa-fire fa-lg mr-6"></i>
-              Popular Shows/Movies
-            </a>
+            
 
             <ul id="search-results">
 
@@ -159,9 +143,150 @@
         </svg>
       </button>
     </div>
-
-
+    
+    
     <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none" tabindex="0">
+
+      
+      
+      <div class='bg-gray-900'>
+        <form class=" text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md" >
+          <button class= "text-gray-300 mr-4 h-6 w-6" type="submit"><i class="fa fa-search "></i></button>
+          <input type="text" placeholder="Search Movies/Shows..." name="search">
+        </form>
+        <ul>
+          
+        </ul>
+      </div>
+
+      
+      
+      <div class="py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-4xl font-semibold text-gray-100">Featured Pairings</h1>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
+          <!-- Replace with your content -->
+          <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
+            <div class="flex-1 flex flex-col p-8">
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
+                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              
+              <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+              <dl class="mt-1 flex-grow flex flex-col justify-between">
+                <dt class="sr-only">Title</dt>
+                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dt class="sr-only">Role</dt>
+                
+              </dl>
+            </div>
+            <div>
+              <div class="-mt-px flex divide-x divide-gray-200">
+                <div class="w-0 flex-1 flex">
+                  <a href="
+                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                    <!-- Heroicon name: solid/mail -->
+                    <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                    <span class="ml-3">Select</span>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+
+          <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
+            <div class="flex-1 flex flex-col p-8">
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
+                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              
+              <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+              <dl class="mt-1 flex-grow flex flex-col justify-between">
+                <dt class="sr-only">Title</dt>
+                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dt class="sr-only">Role</dt>
+                
+              </dl>
+            </div>
+            <div>
+              <div class="-mt-px flex divide-x divide-gray-200">
+                <div class="w-0 flex-1 flex">
+                  <a href="
+                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                    <!-- Heroicon name: solid/mail -->
+                    <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                    <span class="ml-3">Select</span>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+
+          <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
+            <div class="flex-1 flex flex-col p-8">
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
+                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              
+              <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+              <dl class="mt-1 flex-grow flex flex-col justify-between">
+                <dt class="sr-only">Title</dt>
+                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dt class="sr-only">Role</dt>
+                
+              </dl>
+            </div>
+            <div>
+              <div class="-mt-px flex divide-x divide-gray-200">
+                <div class="w-0 flex-1 flex">
+                  <a href="
+                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                    <!-- Heroicon name: solid/mail -->
+                    <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                    <span class="ml-3">Select</span>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+
+          <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
+            <div class="flex-1 flex flex-col p-8">
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
+                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              
+              <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
+              <dl class="mt-1 flex-grow flex flex-col justify-between">
+                <dt class="sr-only">Title</dt>
+                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dt class="sr-only">Role</dt>
+                
+              </dl>
+            </div>
+            <div>
+              <div class="-mt-px flex divide-x divide-gray-200">
+                <div class="w-0 flex-1 flex">
+                  <a href="
+                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                    <!-- Heroicon name: solid/mail -->
+                    <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                    <span class="ml-3">Select</span>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+
+          
+
+          
+                
+            
+          <!-- /End replace -->
+        </div>
+      </div>
       
       <div class="py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -296,35 +421,8 @@
 
       </div>
 
-      <div class="py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-4xl font-semibold text-gray-100">Featured Pairings</h1>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <!-- Replace with your content -->
-          <div class="py-4">
-            <div class="border-4 border-dashed border-green-600 rounded-lg h-96">
-                
-            </div>
-          </div>
-          <!-- /End replace -->
-        </div>
-      </div>
 
-      <div class="py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-4xl font-semibold text-gray-100">Popular Shows/Movies</h1>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <!-- Replace with your content -->
-          <div class="py-4">
-            <div class="border-4 border-dashed border-green-600 rounded-lg h-96">
-                
-            </div>
-          </div>
-          <!-- /End replace -->
-        </div>
-      </div>
+      
 
 
     </main>
