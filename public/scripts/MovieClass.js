@@ -1,9 +1,6 @@
 class Movie {
-	constructor(title){
-		this.title = title;
-	}
-	get title(){
-		return this.title;
+	constructor(t){
+		this.title = t;
 	}
 	set length(l){
 		this.length = l;

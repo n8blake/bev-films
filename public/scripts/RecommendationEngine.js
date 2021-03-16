@@ -1,10 +1,15 @@
 // Provided a movie, generate a drink recommendation
 
 class RecommendationEngine{
+	
 	constructor(){
-		this.recommendation = "Beer";
+		this.recommendation = null;
 	}
-	recommendation(movie){
-		return this.recommendation;
+
+	getRecommendation(movie){
+		let drink = new Drink();
+
+		return ;
 	}
+
 }
