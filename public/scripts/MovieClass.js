@@ -93,4 +93,9 @@ class Movie {
 	get website() {
 		return this.website;
 	}
+
+	// TODO: add method to return text blob that spits out toString();
+	toString() {
+		return this.title + this.year + this.genre + this.director + this.writer + this.plot + this.country + this.type;
+	}
 }
