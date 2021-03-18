@@ -44,6 +44,11 @@ function passMovie(data) {
     media.website = data.Website;
 }
 
+// Displaying data to Movie card:
+/*
+moviePosterEl.inner
+
+*/
 
 searchButtonEl.addEventListener('click',searchMedia);
 searchBoxEl.addEventListener('keyup', function(event) {
