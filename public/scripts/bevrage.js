@@ -1,5 +1,6 @@
 var imgEl = document.querySelector('#drinkimg')
 var ingrdientEl = document.querySelector('#ingrdient')
+var pourEl = document.querySelector('#pour')
 //
 var ingredientlist = [];
 var obj = {};
@@ -82,6 +83,12 @@ function getCategories(pairedDrink) {
                 if (data.drinks[0][obj_measure[i]] !== null){
                     console.log(data.drinks[0][obj_measure[i]])
                     // put data to html
+                    var pourUl = document.createElement('ul');
+                    var pourli = document.createElement('li');
+
+                    pourli.textContent = data.drinks[0][obj_measure[i]];
+                    pourEl.appendChild(pourUl);
+                    pourUl.appendChild(pourli);
                 }
             }
     });
