@@ -1,10 +1,6 @@
 class Movie {
-	constructor(title){
-		this._title = title;
-	}
-
-	get title(){
-		return this._title;
+	constructor(t){
+		this.title = t;
 	}
 	set year(y){
 		this._year = y;
