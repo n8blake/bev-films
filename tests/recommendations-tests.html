@@ -6,16 +6,76 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title></title>
 		<link rel="stylesheet" href="../public/styles/style.css" />
-		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script> 
 		<style>
 			h1, h2, h3, h4, h5, h6 {
 				font-weight: bolder;
+			}
+			input {
+				color: black;
+				margin: 10pt;
+				padding: 4pt;
+			}
+			body {
+			  background-color: #000;
+			  color: #FFF;
+			}
+
+			.icon-container {
+			  width: 20pt;
+			  margin: auto;
+			  padding: 40pt;
+			}
+
+			.shaker {
+			  font-size: 20pt;
+			  animation: slide-in 2s infinite;
+			  animation-timing-function: ease-out;
+			}
+
+			@keyframes slide-in {
+			  0%{
+			    font-size: 15pt;
+			    transform: rotate(0deg);
+			    transform: translate(0, 0);
+			  }
+			  50%{
+			    font-size: 12pt;
+			    transform: translate(10pt, -5pt);
+			    opacity: 0;
+			  }
+			  100% {
+			    font-size: 15pt;
+			    transform: rotate(360deg);
+			    transform: translate(0, 0);
+			  }
+			}
+
+			#spinner {
+				display: none;
 			}
 		</style>
 	</head>
 	<body>
 		<main class="container mx-auto">
 			<h1>BEV FILMS TESTS</h1>
+			<div class="movieList" id="movieList">
+				<input type="text" name="movieName" id="movieInput" placeholder="Movie Title">
+				<button type="button" id="generateRecomendationBtn">Get recommendation</button>
+				<div id="status">Waiting for TF to load...</div>
+				<div id="spinner" class="icon-container"><i class="shaker fa fa-glass-martini"></i></div>
+			</div>
+			<div>
+				<code id="moviePairsJson"></code>
+			</div>
+			<br>
+			<div>
+				<code id="drinksList">
+					
+				</code>
+			</div>
 		</main>
 		<script src="../public/scripts/DrinkClass.js"></script>
 		<script src="../public/scripts/MovieClass.js"></script>
