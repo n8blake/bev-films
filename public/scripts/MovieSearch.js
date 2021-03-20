@@ -61,7 +61,7 @@ function printMovie(data) {
         posterEl.attr('src','https://www.rit.edu/nsfadvance/sites/rit.edu.nsfadvance/files/default_images/photo-unavailable.png');
     }
     moviePlotEl.text(`Plot: ${data.Plot}`);
-    movieLinkEl.attr('href', ``)
+    movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
     // movieRatingEl.text(`IMDB Rating: ${data.Ratings[0].Value}`);
     // movieContainerEl.removeClass('hidden');
 }
