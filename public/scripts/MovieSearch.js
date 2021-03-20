@@ -8,6 +8,8 @@ const moviePlotEl = $('#movie-plot');
 // const movieRatingEl = $('#imdb-rating');
 // const movieContainerEl = $('.container.movie');
 const movieLinkEl = $('#movie-link');
+const featuredPairingsEl = $('#featured-pairings');
+const recommendedPairingEl = $('#recommended-pairing');
 
 const apiURL = 'https://www.omdbapi.com/?apikey=c8c161fc';
 
@@ -54,6 +56,8 @@ function passMovie(data) {
 }
 
 function printMovie(data) {
+    featuredPairingsEl.attr('style','display:none;');
+    recommendedPairingEl.removeClass('invisible');
     movieTitleEl.text(data.Title);
     if (data.Poster !== 'N/A') {
         posterEl.attr('src',`${data.Poster}`);
