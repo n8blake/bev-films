@@ -1,12 +1,9 @@
 const searchButtonEl = $('#search-button');
 const searchBoxEl = $('#search-box');
 const resultsListEl = $('#search-results');
-// const step2El = $('#step-2-block');
 const movieTitleEl = $('#movie-title');
 const posterEl = $('#movie-poster');
 const moviePlotEl = $('#movie-plot');
-// const movieRatingEl = $('#imdb-rating');
-// const movieContainerEl = $('.container.movie');
 const movieLinkEl = $('#movie-link');
 const featuredPairingsEl = $('#featured-pairings');
 const recommendedPairingEl = $('#recommended-pairing');
@@ -22,10 +19,9 @@ function searchMedia() {
 
 function printResults(data) {
     resultsListEl.html('');
-    // step2El.removeClass('hidden');
     let results = data.Search;
     for (let i = 0; i < results.length; i++) {
-        let newResult = $(`<li class="result-card hover:bg-gray-700 hover:text-gray-200">${results[i].Title}</li>`);
+        let newResult = $(`<li class="result-card hover:bg-gray-700 hover:text-gray-200" style="cursor:pointer">${results[i].Title}</li>`);
         resultsListEl.append(newResult);
     }
 }
@@ -66,8 +62,6 @@ function printMovie(data) {
     }
     moviePlotEl.text(`Plot: ${data.Plot}`);
     movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
-    // movieRatingEl.text(`IMDB Rating: ${data.Ratings[0].Value}`);
-    // movieContainerEl.removeClass('hidden');
 }
 
 searchButtonEl.on('click',searchMedia);
