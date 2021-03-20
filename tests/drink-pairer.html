@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<link rel="stylesheet" href="../public/styles/style.css" />
+		<style>
+			body {
+			  background-color: #000;
+			  color: #AEAEAE;
+			  font-family: Helvetica, sans-serif;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: bolder;
+			}
+
+			nav {
+				margin-top: 10pt;
+				margin-bottom: 20pt;
+			}
+
+			main {
+			  width: 70%;
+			  margin: auto;
+			}
+
+			li {
+			  list-style: none;
+			}
+
+			.movieName {
+			  padding: 10pt;
+			  margin-top: 8pt;
+			  font-size: 16pt;
+			  font-weight: bolder;
+			}
+
+			.drinkOption {
+			  padding: 6pt;
+			  color: #fff;
+			  cursor: pointer;
+			}
+
+			.drinkOption.selected {
+			  color: #1299FA;
+			  font-weight: bolder;
+			} 
+
+			#pairing-section {
+				display: block;
+			}
+
+			#output-section {
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<nav class="container mx-auto">
+			<span class="drinkOption selected" id="pairTabSpan">Pair</span> <span class="drinkOption" id="outputTabSpan">Output</span>
+		</nav>
+		<section class="container mx-auto" id="pairing-section">
+			<h1>Movie Parier</h1>
+			<div class="movieList" id="movieList">
+			</div>
+		</section>
+		<section class="container mx-auto" id="output-section">
+			<h1>Output</h1>
+			<code id="output">
+				
+			</code>
+		</section>
+		<script src="pairer.js"></script>
+	</body>
+</html>
