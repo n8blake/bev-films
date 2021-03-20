@@ -1,7 +1,10 @@
 var imgEl = document.querySelector('#drinkimg')
 var ingrdientEl = document.querySelector('#ingrdient')
 var pourEl = document.querySelector('#pour')
-//
+var selectBtn = document.querySelector('#drinkpage')
+var nameEl = document.querySelector('#drink_name')
+
+// create dynamic variables
 var ingredientlist = [];
 var obj = {};
 var measurelist = [];
@@ -16,60 +19,24 @@ for (let i = 0; i < 15; i++) {
     obj_measure[i] = measurelist[i]
 }
 
-// function getCategories(pairedDrink) {
-//     var api_name = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + pairedDrink;
-//     fetch(api_name)
+// search a drink by its catagory and then random pick a drink inside catagory
+// function getCategories(catagory){
+//     var api_catagories = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + catagory;
+
+//     fetch(api_catagories)
 //     .then(function (response) {
 //         return response.json();
 //     })
 //     .then(function (data) {
-//         for (let i = 0; i < data.drinks.length; i++) {
-//             // put data to html
-//             console.log(data.drinks[i].strDrink)
-//             console.log(data.drinks[i].strInstructions)
-//             console.log(data.drinks[i].strDrinkThumb)
-            
-//             var list = data.drinks[i];
-//             for (let j = 0; j < 15; j++) {
-//                 if (data.drinks[i][obj[j]] !== null){
-//                     console.log(data.drinks[i][obj[j]])
-//                     // put data to html
-//                 }else{
-//                     // put data to html
-//                 }
-//             }
-
-//             for (let j = 0; j < 15; j++) {
-//                 if (data.drinks[i][obj_measure[j]] !== null){
-//                     console.log(data.drinks[i][obj_measure[j]])
-//                     // put data to html
-//                 }else{
-//                     // put data to html
-//                 }
-//             }
-//         }
+//         var listID = [...Array(data.drinks.length).keys()];
+//         var randomID = listID[Math.floor(Math.random() * listID.length)];
+//         var pairedDrink = data.drinks[randomID].strDrink;
+//         getDrink(pairedDrink);
 //     });
-// };
+// }
 
 
-function getCategories(catagory){
-    var api_catagories = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + catagory;
-
-    fetch(api_catagories)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        var listID = [...Array(data.drinks.length).keys()];
-        console.log(listID)
-        var randomID = listID[Math.floor(Math.random() * listID.length)];
-        console.log(randomID)
-        var pairedDrink = data.drinks[randomID].strDrink;
-        console.log(pairedDrink)
-        getDrink(pairedDrink);
-    });
-}
-
+// search a drink by its name
 function getDrink(pairedDrink) {
     var api_name = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + pairedDrink;
     fetch(api_name)
@@ -77,17 +44,14 @@ function getDrink(pairedDrink) {
         return response.json();
     })
     .then(function (data) {
-            // put data to html
-            console.log(data.drinks[0].strDrink)
-            console.log(data.drinks[0].strInstructions)
-            console.log(data.drinks[0].strDrinkThumb)
-            imgEl.setAttribute("src",data.drinks[0].strDrinkThumb)
-            imgEl.setAttribute("alt",data.drinks[0].strDrink)
+            var pageurl = 'https://www.thecocktaildb.com/drink/' + data.drinks[0].idDrink;
+            selectBtn.setAttribute("href",pageurl);
+            imgEl.setAttribute("src",data.drinks[0].strDrinkThumb);
+            imgEl.setAttribute("alt",data.drinks[0].strDrink);
+            nameEl.innerHTML = data.drinks[0].strDrink;
 
             for (let i = 0; i < 15; i++) {
                 if (data.drinks[0][obj[i]] !== null){
-                    console.log(data.drinks[0][obj[i]])
-                    // put data to html
                     var ingUl = document.createElement('ul');
                     var ingli = document.createElement('li');
 
@@ -99,7 +63,6 @@ function getDrink(pairedDrink) {
 
             for (let i = 0; i < 15; i++) {
                 if (data.drinks[0][obj_measure[i]] !== null){
-                    console.log(data.drinks[0][obj_measure[i]])
                     var pourUl = document.createElement('ul');
                     var pourli = document.createElement('li');
 
@@ -110,5 +73,3 @@ function getDrink(pairedDrink) {
             }
     });
 };
-
-getCategories('beer')

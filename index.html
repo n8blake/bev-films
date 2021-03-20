@@ -12,8 +12,8 @@
 </head>
 <body class="bg-black flex-col">
     <div class="flex items-center justify-between flex-wrap bg-green-600 p-6">
-        <div class="flex items-center flex-shrink-0 text-gray-100 mx-auto">
-            <span><img src="./public/assets/Bev-Films-BW.png" height='400' width='800' > </span>
+        <div class="flex items-center flex-shrink-0 text-gray-100 mx-auto md:object-scale-down">
+            <span><img class='h-40 w-84  md:w-200 md:h-64  mr-20' src="./public/assets/Bev-Films-BW.png"> </span>
         </div>
 
         
@@ -34,15 +34,16 @@
           <button class= "text-gray-300 mr-4 h-6 w-6 flex flex-row" id="search-button" type="submit"><i class="fa fa-search "></i></button>
           <input class=" text-gray-600 h-6 hover:bg-gray-700 hover:text-gray-200 group flex items-center px-2 py-2 text-base font-medium rounded-md" id="search-box" type="text" placeholder="Search Movies/Shows..." name="search">
           </div>
-        <ul  class="text-gray-300" id="search-results">
+        <ul  class="text-gray-300 mt-1" id="search-results">
+          
           
         </ul>
         
       </div>
 
-      <div class='flex-col'>
+      <div class='flex-col mx-auto'>
       
-      <div class="py-6 md:flex-0">
+      <div class="py-6 md:flex-0" id="featured-pairings">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-4xl font-semibold text-gray-100">Featured Pairings</h1>
         </div>
@@ -56,7 +57,7 @@
               <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
               <dl class="mt-1 flex-grow flex flex-col justify-between">
                 <dt class="sr-only">Title</dt>
-                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dd class="text-gray-300 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
                 <dt class="sr-only">Role</dt>
                 
               </dl>
@@ -78,13 +79,13 @@
 
           <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
             <div class="flex-1 flex flex-col p-8">
-              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
-                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING-3.png" alt="">
+                <p class='text-gray-300'>A tasty and epic cocktail on the rocks inspired by Thor in Avengers Infinity War. Okay, really, any Thor!</p>
               
               <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
               <dl class="mt-1 flex-grow flex flex-col justify-between">
                 <dt class="sr-only">Title</dt>
-                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dd class="text-gray-300 text-sm">The grave course of events set in motion by Thanos that wiped out half the universe and fractured the Avengers ranks compels the remaining Avengers to take one final stand in Marvel Studios' grand conclusion to twenty-two films, "Avengers: Endgame."</dd>
                 <dt class="sr-only">Role</dt>
                 
               </dl>
@@ -93,7 +94,7 @@
               <div class="-mt-px flex divide-x divide-gray-200">
                 <div class="w-0 flex-1 flex">
                   <a href="
-                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                  https://www.reallyareyouserious.com/epic-thor-stormbreaker-cocktail-inspired-by-avengers-infinity-war" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
                     <!-- Heroicon name: solid/mail -->
                     <i class="fas fa-glass-cheers fa-lg mr-3"></i>
                     <span class="ml-3">Select</span>
@@ -106,13 +107,13 @@
 
           <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
             <div class="flex-1 flex flex-col p-8">
-              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
-                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING-4.png" alt="">
+                <p class='text-gray-300'>Grab your broomstick and get buzzed.</p>
               
               <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
               <dl class="mt-1 flex-grow flex flex-col justify-between">
                 <dt class="sr-only">Title</dt>
-                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dd class="text-gray-300 text-sm">Harry Potter is a series of seven fantasy novels written by British author, J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.</dd>
                 <dt class="sr-only">Role</dt>
                 
               </dl>
@@ -121,7 +122,7 @@
               <div class="-mt-px flex divide-x divide-gray-200">
                 <div class="w-0 flex-1 flex">
                   <a href="
-                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                  https://www.delish.com/cooking/recipe-ideas/recipes/a44560/super-boozy-butterbeer-recipe/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
                     <!-- Heroicon name: solid/mail -->
                     <i class="fas fa-glass-cheers fa-lg mr-3"></i>
                     <span class="ml-3">Select</span>
@@ -134,13 +135,13 @@
 
           <li class="col-span-1 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
             <div class="flex-1 flex flex-col p-8">
-              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of TRENDING.PNG" alt="">
-                <p class='text-gray-300'>Heck yeah! If you'd vote for Pedro and can draw a liger, you'll love this mai tai Napoleon Dynamite cocktail inspired by the movie.</p>
+              <img class="w-80 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/Copy of Copy of TRENDING-2.png" alt="">
+                <p class='text-gray-300'>There’s no better way to enjoy a Game of Thrones episode than with a Game of Thrones cocktail recipe like this Ice Dragon Cocktail! I mean, with all the intensity going on, how could we not need a drink? </p>
               
               <h3 class="mt-6 text-gray-900 text-sm font-medium"></h3>
               <dl class="mt-1 flex-grow flex flex-col justify-between">
                 <dt class="sr-only">Title</dt>
-                <dd class="text-gray-500 text-sm">A listless and alienated teenager decides to help his new friend win the class presidency in their small western high school, while he must deal with his bizarre family life back home.</dd>
+                <dd class="text-gray-300 text-sm">Game of Thrones is an HBO series that tells the story of a medieval country's civil war. The series, which premiered in April 2011, is set on the fictional continents of Westeros and Essos in a world where seasons stretch on for years. When the story begins, a decade-long summer is ending, and winter looms as characters battle to claim the "Iron Throne," the seat of the king of the Seven Kingdoms, the regime that rules all but the northern tip of Westeros.</dd>
                 <dt class="sr-only">Role</dt>
                 
               </dl>
@@ -149,7 +150,7 @@
               <div class="-mt-px flex divide-x divide-gray-200">
                 <div class="w-0 flex-1 flex">
                   <a href="
-                  https://www.goodfoodstories.com/napoleon-dynamite-cocktail/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                  https://thelovenerds.com/game-of-thrones-ice-dragon-cocktail-recipe/" target="_blank" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
                     <!-- Heroicon name: solid/mail -->
                     <i class="fas fa-glass-cheers fa-lg mr-3"></i>
                     <span class="ml-3">Select</span>
@@ -169,23 +170,23 @@
         </div>
       </div>
       
-      <div class="py-6">
+      <div class="py-6 invisible" id="recommended-pairing">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-4xl font-semibold text-gray-100">Recommended Pairing</h1>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <!-- Replace with your content -->
           <div class="py-4">
-            <div class="border-4 border-dashed border-green-600 rounded-lg h-120">
+            <div class=" rounded-lg h-120">
 
               <ul class="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
                 <li class="col-span-2 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
                   <div class="flex-1 flex flex-col p-8">
-                    <h3 class="mt-6 text-grey-300 text-sm font-medium" id="movie-title">Title</h3>
-                    <img class="w-40 h-50 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/OIP.jpg" alt="movie poster" id="movie-poster">
+                    <h3 class="m-6 text-gray-200 text-2xl" id="movie-title">Title</h3>
+                    <img class="w-40 h-50 flex-shrink-0 mx-auto m-2 bg-black rounded" src="./public/assets/OIP.jpg" alt="movie poster" id="movie-poster">
                     <dl class="mt-1 flex-grow flex flex-col justify-between">
                       <dt class="sr-only">Title</dt>
-                      <dd class="text-gray-500 text-sm" id="movie-plot">This movie/show is about this stuff</dd>
+                      <dd class="text-gray-200 text-sm mt-2" id="movie-plot">This movie/show is about this stuff</dd>
                       <dt class="sr-only">Role</dt>
                       
                     </dl>
@@ -193,9 +194,9 @@
                   <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
                       <div class="w-0 flex-1 flex">
-                        <a id="movie-link" href="#" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                        <a id="movie-link" href="#" target='_blank' class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
                           <!-- Heroicon name: solid/mail -->
-                          <i class="fas fa-glass-cheers fa-lg mr-3"></i>
+                          <i class="fas fa-glass-cheers fa-lg mr-3" target='_blank'></i>
                           <span class="ml-3">Select</span>
                         </a>
                       </div>
@@ -206,14 +207,14 @@
 
                 <li class="col-span-2 flex flex-col text-center bg-gray-900 rounded-lg shadow divide-y divide-gray-200 border-4 border-dashed border-green-600 rounded-lg m-2">
                   <div class="flex-1 flex flex-col p-8">
-                    <img class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/cosmopolitan-cocktail-750x1125.jpg" alt="" id ="drinkimg">
-
                     
+                    <img class="w-64 h-64 flex-shrink-0 mx-auto bg-black rounded" src="./public/assets/cosmopolitan-cocktail-750x1125.jpg" alt="" id ="drinkimg">
                     
-        
-                      <dd class="text-gray-500 text-sm mt-5" id="ingrdient">Ingredients:</dd>
-                      <dd class="text-gray-500 text-sm mt-5" id="pour">Pours</dd>
-
+                    <dd class="text-gray-200 text-2xl  mt-5" id="drink_name"></dd>
+                    <div class="flex-1 flex flex-row p-8 mx-auto">
+                      <dd class="text-gray-200 text-sm m-5" id="ingrdient">Ingredients:</dd>
+                      <dd class="text-gray-200 text-sm m-5" id="pour">Pours:</dd>
+                    </div>
                       
                       
                     </dl>
@@ -221,7 +222,7 @@
                   <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
                       <div class="w-0 flex-1 flex">
-                        <a href="#" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                        <a class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500" id="drinkpage" target="_blank">
                           <!-- Heroicon name: solid/mail -->
                           <i href='' target='_blank' class="fas fa-glass-cheers fa-lg mr-3"></i>
                           <span class="ml-3">Select</span>
@@ -260,4 +261,5 @@
 <script src="public/scripts/MovieClass.js"></script>
 <script src="public/scripts/MovieSearch.js"></script>
 <script src="public/scripts/bevrage.js"></script>
+<script src="public/scripts/main.js"></script>
 </html>
