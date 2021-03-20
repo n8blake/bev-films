@@ -61,15 +61,3 @@ function printMediaDetails(data) {
     moviePlotEl.text(`Plot: ${data.Plot}`);
     movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
 }
-
-// // Note: Moved to Main
-// searchButtonEl.on('click',searchMedia);
-// searchBoxEl.on('keyup', function(event) {
-//     if (event.keyCode === 13) {
-//         searchMedia();
-//     }
-// });
-// $(document).on('click', '.result-card', function(event) {
-//     let title = $(event.target).text();
-//     getMediaDetails(title);
-// });
