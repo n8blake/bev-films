@@ -1,45 +1,39 @@
 const searchButtonEl = $('#search-button');
 const searchBoxEl = $('#search-box');
 const resultsListEl = $('#search-results');
-// const step2El = $('#step-2-block');
 const movieTitleEl = $('#movie-title');
 const posterEl = $('#movie-poster');
 const moviePlotEl = $('#movie-plot');
-// const movieRatingEl = $('#imdb-rating');
-// const movieContainerEl = $('.container.movie');
 const movieLinkEl = $('#movie-link');
 const featuredPairingsEl = $('#featured-pairings');
 const recommendedPairingEl = $('#recommended-pairing');
 
 const apiURL = 'https://www.omdbapi.com/?apikey=c8c161fc';
 
-function searchMedia() {
+async function searchMedia() {
     let searchURL = apiURL + `&s=${searchBoxEl.val()}`;
-    fetch(searchURL)
-  .then(response => response.json())
-  .then(data => printResults(data));
+    let results = await fetch(searchURL)
+  .then(response => response.json());
+    return results;
 }
 
-function printResults(data) {
+function printMediaResults(data) {
     resultsListEl.html('');
-    // step2El.removeClass('hidden');
     let results = data.Search;
     for (let i = 0; i < results.length; i++) {
-        let newResult = $(`<li class="result-card hover:bg-gray-700 hover:text-gray-200">${results[i].Title}</li>`);
+        let newResult = $(`<li class="result-card hover:bg-gray-700 hover:text-gray-200" style="cursor:pointer">${results[i].Title}</li>`);
         resultsListEl.append(newResult);
     }
 }
 
-// When selecting a movie from the results list:
-function getDetails(title) {
+async function getMediaDetails(title) {
     let searchURL = apiURL + `&t=${title}`;
-    fetch(searchURL)
-  .then(response => response.json())
-  .then(data => passMovie(data));
+    let result = fetch(searchURL)
+  .then(response => response.json());
+    return result;
 }
 
-function passMovie(data) {
-    printMovie(data);
+function createMovie(data) {
     let media = new Movie(data.Title);
     media.year = data.Year;
     media.genre = data.Genre;
@@ -52,10 +46,10 @@ function passMovie(data) {
     media.imdbid = data.imdbID;
     media.type = data.Type;
     media.website = data.Website;
-    // TODO: Call Nate's function, passing Movie object.
+    return media;
 }
 
-function printMovie(data) {
+function printMediaDetails(data) {
     featuredPairingsEl.attr('style','display:none;');
     recommendedPairingEl.removeClass('invisible');
     movieTitleEl.text(data.Title);
@@ -66,17 +60,4 @@ function printMovie(data) {
     }
     moviePlotEl.text(`Plot: ${data.Plot}`);
     movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
-    // movieRatingEl.text(`IMDB Rating: ${data.Ratings[0].Value}`);
-    // movieContainerEl.removeClass('hidden');
 }
-
-searchButtonEl.on('click',searchMedia);
-searchBoxEl.on('keyup', function(event) {
-    if (event.keyCode === 13) {
-        searchMedia();
-    }
-});
-$(document).on('click', '.result-card', function(event) {
-    let title = $(event.target).text();
-    getDetails(title);
-});
