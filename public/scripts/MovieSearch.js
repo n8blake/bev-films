@@ -14,10 +14,10 @@ function searchMedia() {
     let searchURL = apiURL + `&s=${searchBoxEl.val()}`;
     fetch(searchURL)
   .then(response => response.json())
-  .then(data => printResults(data));
+  .then(data => printMediaResults(data));
 }
 
-function printResults(data) {
+function printMediaResults(data) {
     resultsListEl.html('');
     let results = data.Search;
     for (let i = 0; i < results.length; i++) {
@@ -27,15 +27,15 @@ function printResults(data) {
 }
 
 // When selecting a movie from the results list:
-function getDetails(title) {
+function getMediaDetails(title) {
     let searchURL = apiURL + `&t=${title}`;
     fetch(searchURL)
   .then(response => response.json())
-  .then(data => passMovie(data));
+  .then(data => createMovie(data));
 }
 
-function passMovie(data) {
-    printMovie(data);
+function createMovie(data) {
+    printMediaDetails(data);
     let media = new Movie(data.Title);
     media.year = data.Year;
     media.genre = data.Genre;
@@ -48,10 +48,9 @@ function passMovie(data) {
     media.imdbid = data.imdbID;
     media.type = data.Type;
     media.website = data.Website;
-    // TODO: Call Nate's function, passing Movie object.
 }
 
-function printMovie(data) {
+function printMediaDetails(data) {
     featuredPairingsEl.attr('style','display:none;');
     recommendedPairingEl.removeClass('invisible');
     movieTitleEl.text(data.Title);
@@ -64,6 +63,7 @@ function printMovie(data) {
     movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
 }
 
+// Note: Moved to Main
 searchButtonEl.on('click',searchMedia);
 searchBoxEl.on('keyup', function(event) {
     if (event.keyCode === 13) {
@@ -72,5 +72,5 @@ searchBoxEl.on('keyup', function(event) {
 });
 $(document).on('click', '.result-card', function(event) {
     let title = $(event.target).text();
-    getDetails(title);
+    getMediaDetails(title);
 });
