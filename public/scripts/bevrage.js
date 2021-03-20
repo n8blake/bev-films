@@ -19,6 +19,7 @@ for (let i = 0; i < 15; i++) {
     obj_measure[i] = measurelist[i]
 }
 
+// 
 function getCategories(catagory){
     var api_catagories = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + catagory;
 
@@ -34,6 +35,8 @@ function getCategories(catagory){
     });
 }
 
+
+//
 function getDrink(pairedDrink) {
     var api_name = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + pairedDrink;
     fetch(api_name)
