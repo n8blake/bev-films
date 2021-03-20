@@ -51,7 +51,6 @@ function createMovie(data) {
 
 function printMediaDetails(data) {
     featuredPairingsEl.attr('style','display:none;');
-    recommendedPairingEl.removeClass('invisible');
     movieTitleEl.text(data.Title);
     if (data.Poster !== 'N/A') {
         posterEl.attr('src',`${data.Poster}`);
@@ -60,4 +59,5 @@ function printMediaDetails(data) {
     }
     moviePlotEl.text(`Plot: ${data.Plot}`);
     movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
+    recommendedPairingEl.removeClass('invisible');
 }
