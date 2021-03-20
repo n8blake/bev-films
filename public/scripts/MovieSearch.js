@@ -7,6 +7,7 @@ const posterEl = $('#movie-poster');
 const moviePlotEl = $('#movie-plot');
 // const movieRatingEl = $('#imdb-rating');
 // const movieContainerEl = $('.container.movie');
+const movieLinkEl = $('#movie-link');
 
 const apiURL = 'https://www.omdbapi.com/?apikey=c8c161fc';
 
@@ -22,7 +23,7 @@ function printResults(data) {
     // step2El.removeClass('hidden');
     let results = data.Search;
     for (let i = 0; i < results.length; i++) {
-        let newResult = $(`<li class="result-card">${results[i].Title}</li>`);
+        let newResult = $(`<li class="result-card hover:bg-gray-700 hover:text-gray-200">${results[i].Title}</li>`);
         resultsListEl.append(newResult);
     }
 }
@@ -60,6 +61,7 @@ function printMovie(data) {
         posterEl.attr('src','https://www.rit.edu/nsfadvance/sites/rit.edu.nsfadvance/files/default_images/photo-unavailable.png');
     }
     moviePlotEl.text(`Plot: ${data.Plot}`);
+    movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
     // movieRatingEl.text(`IMDB Rating: ${data.Ratings[0].Value}`);
     // movieContainerEl.removeClass('hidden');
 }
