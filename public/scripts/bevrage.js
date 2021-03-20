@@ -2,6 +2,8 @@ var imgEl = document.querySelector('#drinkimg')
 var ingrdientEl = document.querySelector('#ingrdient')
 var pourEl = document.querySelector('#pour')
 var selectBtn = document.querySelector('#drinkpage')
+var nameEl = document.querySelector('#drink_name')
+
 //
 var ingredientlist = [];
 var obj = {};
@@ -26,11 +28,8 @@ function getCategories(catagory){
     })
     .then(function (data) {
         var listID = [...Array(data.drinks.length).keys()];
-        console.log(listID)
         var randomID = listID[Math.floor(Math.random() * listID.length)];
-        console.log(randomID)
         var pairedDrink = data.drinks[randomID].strDrink;
-        console.log(pairedDrink)
         getDrink(pairedDrink);
     });
 }
@@ -47,10 +46,10 @@ function getDrink(pairedDrink) {
             // console.log(data.drinks[0].strInstructions)
             // console.log(data.drinks[0].strDrinkThumb)
             var pageurl = 'https://www.thecocktaildb.com/drink/' + data.drinks[0].idDrink;
-            console.log(pageurl)
             selectBtn.setAttribute("href",pageurl);
             imgEl.setAttribute("src",data.drinks[0].strDrinkThumb);
             imgEl.setAttribute("alt",data.drinks[0].strDrink);
+            nameEl.innerHTML = data.drinks[0].strDrink;
 
             for (let i = 0; i < 15; i++) {
                 if (data.drinks[0][obj[i]] !== null){
