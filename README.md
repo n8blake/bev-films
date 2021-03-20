@@ -18,4 +18,4 @@ This web application delivers recommended drink pairings for movies and tv serie
 
 The following image shows the web application's appearance and functionality:
 
-![Sample screenshot](./Public/assets/Function_Demo.png)
+![Sample screenshot](./public/assets/Function_Demo.png)
