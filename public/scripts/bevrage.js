@@ -52,7 +52,25 @@ for (let i = 0; i < 15; i++) {
 // };
 
 
-function getCategories(pairedDrink) {
+function getCategories(catagory){
+    var api_catagories = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + catagory;
+
+    fetch(api_catagories)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var listID = [...Array(data.drinks.length).keys()];
+        console.log(listID)
+        var randomID = listID[Math.floor(Math.random() * listID.length)];
+        console.log(randomID)
+        var pairedDrink = data.drinks[randomID].strDrink;
+        console.log(pairedDrink)
+        getDrink(pairedDrink);
+    });
+}
+
+function getDrink(pairedDrink) {
     var api_name = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + pairedDrink;
     fetch(api_name)
     .then(function (response) {
@@ -82,7 +100,6 @@ function getCategories(pairedDrink) {
             for (let i = 0; i < 15; i++) {
                 if (data.drinks[0][obj_measure[i]] !== null){
                     console.log(data.drinks[0][obj_measure[i]])
-                    // put data to html
                     var pourUl = document.createElement('ul');
                     var pourli = document.createElement('li');
 
@@ -94,4 +111,4 @@ function getCategories(pairedDrink) {
     });
 };
 
-getCategories('margarita')
+getCategories('beer')
