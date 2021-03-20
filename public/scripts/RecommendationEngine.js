@@ -4,12 +4,12 @@ var textCompareModel = null;
 
 console.log("hello from recommedation engine");
 
-use.load().then(model => {
+const modelPromise = use.load().then(model => {
   textCompareModel = model;
-  let btn = document.querySelector('#generateRecomendationBtn');
-  btn.disabled = false;
-  btn.addEventListener('click', getRecommendation);
-  statusElement.textContent = "Ready";
+  // let btn = document.querySelector('#generateRecomendationBtn');
+  // btn.disabled = false;
+  // btn.addEventListener('click', getRecommendation);
+  // statusElement.textContent = "Ready";
   // call function here
   //console.log('Running test');
   //runTest();
