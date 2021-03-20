@@ -10,11 +10,11 @@ const recommendedPairingEl = $('#recommended-pairing');
 
 const apiURL = 'https://www.omdbapi.com/?apikey=c8c161fc';
 
-function searchMedia() {
+async function searchMedia() {
     let searchURL = apiURL + `&s=${searchBoxEl.val()}`;
-    fetch(searchURL)
-  .then(response => response.json())
-  .then(data => printMediaResults(data));
+    let results = await fetch(searchURL)
+  .then(response => response.json());
+    return results;
 }
 
 function printMediaResults(data) {
@@ -26,16 +26,14 @@ function printMediaResults(data) {
     }
 }
 
-// When selecting a movie from the results list:
-function getMediaDetails(title) {
+async function getMediaDetails(title) {
     let searchURL = apiURL + `&t=${title}`;
-    fetch(searchURL)
-  .then(response => response.json())
-  .then(data => createMovie(data));
+    let result = fetch(searchURL)
+  .then(response => response.json());
+    return result;
 }
 
 function createMovie(data) {
-    printMediaDetails(data);
     let media = new Movie(data.Title);
     media.year = data.Year;
     media.genre = data.Genre;
@@ -48,6 +46,7 @@ function createMovie(data) {
     media.imdbid = data.imdbID;
     media.type = data.Type;
     media.website = data.Website;
+    return media;
 }
 
 function printMediaDetails(data) {
@@ -63,14 +62,14 @@ function printMediaDetails(data) {
     movieLinkEl.attr('href', `https://www.imdb.com/title/${data.imdbID}`);
 }
 
-// Note: Moved to Main
-searchButtonEl.on('click',searchMedia);
-searchBoxEl.on('keyup', function(event) {
-    if (event.keyCode === 13) {
-        searchMedia();
-    }
-});
-$(document).on('click', '.result-card', function(event) {
-    let title = $(event.target).text();
-    getMediaDetails(title);
-});
+// // Note: Moved to Main
+// searchButtonEl.on('click',searchMedia);
+// searchBoxEl.on('keyup', function(event) {
+//     if (event.keyCode === 13) {
+//         searchMedia();
+//     }
+// });
+// $(document).on('click', '.result-card', function(event) {
+//     let title = $(event.target).text();
+//     getMediaDetails(title);
+// });

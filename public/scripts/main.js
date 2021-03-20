@@ -1,31 +1,29 @@
-/*
-1.) User clicks to search. 
---Call searchMedia(), return results data
---Send results data to printResults()
+// Called when the user searches for a media title,
+// and prints the results to the page
+async function searchFlow() {
+    let searchData = await searchMedia();
+    printMediaResults(searchData);
+}
 
-2.) User selects a result.
---Event listener currently calls getDetails() directly
---Can implement a wrapper function in main
---Return movie data
---Call printMovie()
---Send movie data to passMovie(), return Drink
---Call bevrage function
-*/
-
-function searchFlow() {
-    let searchResults = searchMedia();
-    printResults(searchResults);
+// Called when the user selects a search result.
+async function mediaSelected(title) {
+    let mediaData = await getMediaDetails(title);
+    printMediaDetails(mediaData);
+    let selectedMedia = createMovie(mediaData);
+    let mediaString = selectedMedia.toString();
+    // let recommendation = await drinkRecommendation(mediaString);
+    // getDrink(recommendation.drink);
 }
 
 // Event listeners
 // Listening elements defined in MovieSearch.js
-searchButtonEl.on('click',searchMedia);
+searchButtonEl.on('click',searchFlow);
 searchBoxEl.on('keyup', function(event) {
     if (event.keyCode === 13) {
-        searchMedia();
+        searchFlow();
     }
 });
 $(document).on('click', '.result-card', function(event) {
     let title = $(event.target).text();
-    getDetails(title);
+    mediaSelected(title);
 });
