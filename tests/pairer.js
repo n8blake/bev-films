@@ -1,19 +1,20 @@
 const movies = [
-'Tomorrow Never Dies', 'Goldfinger', 'Golden Eye', 'The World Is Not Enough', 'Tinker Tailor Solider Spy',
-'Titanic', 'The Great Gatsby',
-'Cars', 'Baby Driver', 'Drive',
-'Lilo and Stitch', 'Moana', 
-'Sicario', 'Coco', 'Couples Retret',
-'The Santa Clause', 'Jingle All The Way', 'Home Alone', 'Frosty The Snowman', 'Elf',
-'Brides Maids', 'Pitch Perfect', 'Legally Blonde', 'Sex and the City',
-'Ghost Busters', 'Suicide Squade', 'Birds of Prey', 'Oceans 11', 'Oceans 12',
-'Inception', 'Batman', 'The Dark Knight', 'Remember the Titains', 'Rocky', 'The Matrix',
-'Star Wars: Episode I', 'Star Wars: Episode II', 'Star Wars: Episode IV', 'Star Wars: Episode V',
-'Avatar', 'Lost In Space', 'Starship Troopers',
-'Happy Gilmor', 'Step Brothers', 'Anchorman', 'Talladega Nights'
+'Goldfinger', 'Golden Eye', 'The World Is Not Enough', 
+'The Great Gatsby',
+'Baby Driver', 
+'Moana', 
+'Sicario', 
+'The Santa Clause', 
+'Brides Maids', 
+'Ghost Busters', 
+'The Dark Knight',
+'Star Wars: Episode IV - A New Hope', 
+'Step Brothers',
 ];
 
-const drinks = [
+const drinks = ["Dirty Martini","French 75","Sidecar","Mai Tai","Margarita","Egg Nog #4","Cosmopolitan","Blue Hurricane","Manhattan","Applejack","Long Island Iced Tea"];
+
+/*const drinks = [
 'Dirty Martini',
 'French 75',
 'Sidecar',
@@ -25,7 +26,7 @@ const drinks = [
 'Manhattan',
 'Tokio Iced Tea',
 'Long Island Iced Tea'
-];
+];*/
 
 
 class Pair {
