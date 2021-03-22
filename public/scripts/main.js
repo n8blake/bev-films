@@ -10,18 +10,16 @@ async function mediaSelected(title) {
     //let mediaData = await getMediaDetails(title);
     let mediaData = null;
     const mediaPromise = Promise.resolve(getMediaDetails(title)).then(result => {
-        console.log(result);
+        //console.log(result);
         mediaData = result;
     });
-    Promise.all([mediaPromise, modelPromise]).then(async () => {
+    Promise.all([mediaPromise]).then(async () => {
         printMediaDetails(mediaData);
         let selectedMedia = createMovie(mediaData);
         let mediaString = selectedMedia.toString();
         let recommendation = await drinkRecommendation(mediaString);
         getDrink(recommendation.drink);
     }); 
-    // let recommendation = await drinkRecommendation(mediaString);
-    // getDrink(recommendation.drink);
 }
 
 // Event listeners

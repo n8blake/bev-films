@@ -1,33 +1,35 @@
 "use strict";
 
-var textCompareModel = null;
-
-console.log("hello from recommedation engine");
-
-const modelPromise = use.load().then(model => {
-  textCompareModel = model;
-  let btn = document.querySelector('#generateRecomendationBtn');
-  btn.disabled = false;
-  btn.addEventListener('click', getRecommendation);
-  statusElement.textContent = "Ready";
-  // call function here
-  // console.log('Running test');
-  // runTest();
-});
+// console.log("hello from recommedation engine");
+// var textCompareModel = null;
+// var textCompareModelStr = null;
+// const modelPromise = use.load().then(async (model) => {
+//   textCompareModel = model;
+//   let textCompareModelDecycledObject = await JSON.decycle(textCompareModel);
+//   textCompareModelStr = await JSON.stringify(textCompareModelDecycledObject);
+//   //console.log(textCompareModelStr);
+// });
 
 // Use the TensorFlow Model to compare two text strings,
 // return a float that represent how closely (0 to 1) the
 // strings match eachother. A 1 is a perfect match. A 0 
 // is no match. The function runs ayscronously.
 const match = async(text1, text2) => {
-  const texts = [text1, text2];
-  //console.log(texts);
-  const embeddings = await textCompareModel.embed(texts);
-  const text1tf = tf.slice(embeddings, [0, 0], [1]);
-  const text2tf = tf.slice(embeddings, [1, 0], [1]);
-  const idx = tf.matMul(text1tf, text2tf, false, true).dataSync();
-  //console.log(idx);
-  return idx;
+  // const texts = [text1, text2];
+  // //console.log(texts);
+  // const embeddings = await textCompareModel.embed(texts);
+  // const text1tf = tf.slice(embeddings, [0, 0], [1]);
+  // const text2tf = tf.slice(embeddings, [1, 0], [1]);
+  // const idx = tf.matMul(text1tf, text2tf, false, true).dataSync();
+  // //console.log(idx);
+  // return idx;
+  const matchWorker = new Worker('public/scripts/MatchWorker.js');
+  return new Promise(function(resolve, reject) {
+    matchWorker.addEventListener('message', function(e) {
+     return resolve(e.data);
+    }, false);
+    matchWorker.postMessage([text1, text2]);
+  });
 }
 
 // Using the modified Jaccard Index method, 
