@@ -2,24 +2,35 @@
 // and prints the results to the page
 async function searchFlow() {
     let searchData = await searchMedia();
-    printMediaResults(searchData);
+    if(searchData.Search){
+        printMediaResults(searchData);
+    }
 }
 
 // Called when the user selects a search result.
 async function mediaSelected(title) {
-    //let mediaData = await getMediaDetails(title);
-    let mediaData = null;
-    const mediaPromise = Promise.resolve(getMediaDetails(title)).then(result => {
-        //console.log(result);
-        mediaData = result;
-    });
-    Promise.all([mediaPromise]).then(async () => {
+    getMediaDetails(title).then(result => {
+        const mediaData = result;
         printMediaDetails(mediaData);
         let selectedMedia = createMovie(mediaData);
         let mediaString = selectedMedia.toString();
-        let recommendation = await drinkRecommendation(mediaString);
-        getDrink(recommendation.drink);
-    }); 
+        imgEl.style.display = 'none';
+        ingrdientEl.style.display = 'none';
+        pourEl.style.display = 'none';
+        nameEl.textContent = 'Getting recommendation...';
+        const spinner = document.querySelector('#recommendation-spinner');
+        spinner.style.display = 'block';
+        const recommendationWorker = new Worker('public/scripts/RecommendationEngine.js');
+        recommendationWorker.addEventListener('message', function(e) {
+            spinner.style.display = 'none';
+            imgEl.style.display = 'block';
+            ingrdientEl.style.display = 'block';
+            pourEl.style.display = 'block';;
+            let recommendation = e.data;
+            getDrink(recommendation.drink);
+        }, false);
+        recommendationWorker.postMessage(mediaString);
+    });
 }
 
 // Event listeners

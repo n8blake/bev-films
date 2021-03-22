@@ -1,35 +1,27 @@
-"use strict";
-
-// console.log("hello from recommedation engine");
-// var textCompareModel = null;
-// var textCompareModelStr = null;
-// const modelPromise = use.load().then(async (model) => {
-//   textCompareModel = model;
-//   let textCompareModelDecycledObject = await JSON.decycle(textCompareModel);
-//   textCompareModelStr = await JSON.stringify(textCompareModelDecycledObject);
-//   //console.log(textCompareModelStr);
-// });
+// You betta werk...
+importScripts('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs', 'https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder');
+var textCompareModel = null;
+self.addEventListener('message', function(e) {
+  use.load().then(async (model) => {   
+    textCompareModel = model;
+    drinkRecommendation(e.data[0]).then(recommendation => {
+      self.postMessage(recommendation);
+    });
+  });
+}, false);
 
 // Use the TensorFlow Model to compare two text strings,
 // return a float that represent how closely (0 to 1) the
 // strings match eachother. A 1 is a perfect match. A 0 
 // is no match. The function runs ayscronously.
 const match = async(text1, text2) => {
-  // const texts = [text1, text2];
-  // //console.log(texts);
-  // const embeddings = await textCompareModel.embed(texts);
-  // const text1tf = tf.slice(embeddings, [0, 0], [1]);
-  // const text2tf = tf.slice(embeddings, [1, 0], [1]);
-  // const idx = tf.matMul(text1tf, text2tf, false, true).dataSync();
-  // //console.log(idx);
-  // return idx;
-  const matchWorker = new Worker('public/scripts/MatchWorker.js');
-  return new Promise(function(resolve, reject) {
-    matchWorker.addEventListener('message', function(e) {
-     return resolve(e.data);
-    }, false);
-    matchWorker.postMessage([text1, text2]);
-  });
+  const texts = [text1, text2];
+  const embeddings = await textCompareModel.embed(texts);
+  const text1tf = tf.slice(embeddings, [0, 0], [1]);
+  const text2tf = tf.slice(embeddings, [1, 0], [1]);
+  const idx = tf.matMul(text1tf, text2tf, false, true).dataSync();
+  //console.log(idx);
+  return idx;
 }
 
 // Using the modified Jaccard Index method, 
@@ -78,7 +70,6 @@ const drinkRecommendation = (movieText) => {
     drinkRecommendations.push(drinkRecommendation);
   });
   return Promise.all(drinkRecommendations).then((recommedations) =>{
-    //console.log(recommedations);
     let drink = null;
     let score = 0;
     recommedations.forEach(rec => {
