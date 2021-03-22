@@ -14,6 +14,7 @@ async function mediaSelected(title) {
         printMediaDetails(mediaData);
         let selectedMedia = createMovie(mediaData);
         let mediaString = selectedMedia.toString();
+        console.log(mediaString);
         imgEl.style.display = 'none';
         ingrdientEl.style.display = 'none';
         pourEl.style.display = 'none';
