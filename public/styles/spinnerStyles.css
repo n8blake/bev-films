@@ -1,0 +1,15 @@
+.shaker {
+  font-size: 64pt;
+  color: rgba(5, 150, 105, var(--tw-border-opacity));
+  animation: slide-in 2s infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-in {
+  0%{
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
