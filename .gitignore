@@ -6,3 +6,4 @@ ignore
 package-lock.json
 package.json
 tailwind.config.js
+.DS_Store

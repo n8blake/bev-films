@@ -49,7 +49,10 @@ function getDrink(pairedDrink) {
             imgEl.setAttribute("src",data.drinks[0].strDrinkThumb);
             imgEl.setAttribute("alt",data.drinks[0].strDrink);
             nameEl.innerHTML = data.drinks[0].strDrink;
-
+            ingrdientEl.innerHTML = '';
+            pourEl.innerHTML = '';
+            ingrdientEl.textContent = 'Ingredients:'
+            pourEl.textContent = 'Pours:'
             for (let i = 0; i < 15; i++) {
                 if (data.drinks[0][obj[i]] !== null){
                     var ingUl = document.createElement('ul');

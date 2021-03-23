@@ -92,6 +92,6 @@ class Movie {
 	}
 
 	toString() {
-		return this.title + " " + this._year + " " + this._genre + " " + this._director + " " + this._writer + " " + this._plot + " " + this._country + " " + this._type;
+		return this.title + " " + this._year + " " + this._genre + " "   + this._writer + " " + this._plot;
 	}
 }
