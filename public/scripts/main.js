@@ -21,16 +21,34 @@ async function mediaSelected(title) {
         nameEl.textContent = 'Getting recommendation...';
         const spinner = document.querySelector('#recommendation-spinner');
         spinner.style.display = 'block';
-        const recommendationWorker = new Worker('public/scripts/RecommendationEngine.js');
-        recommendationWorker.addEventListener('message', function(e) {
+        var recommendationsStorage = localStorage.getItem('recommendations');
+        if(recommendationsStorage != null){
+            recommendationsStorage = JSON.parse(recommendationsStorage);
+        }
+        if(recommendationsStorage && recommendationsStorage[title]){
             spinner.style.display = 'none';
             imgEl.style.display = 'block';
             ingrdientEl.style.display = 'block';
             pourEl.style.display = 'block';;
-            let recommendation = e.data;
-            getDrink(recommendation.drink);
-        }, false);
-        recommendationWorker.postMessage(mediaString);
+            getDrink(recommendationsStorage[title].drink);
+        } else {
+            const recommendationWorker = new Worker('public/scripts/RecommendationEngine.js');
+            recommendationWorker.addEventListener('message', function(e) {
+                spinner.style.display = 'none';
+                imgEl.style.display = 'block';
+                ingrdientEl.style.display = 'block';
+                pourEl.style.display = 'block';;
+                let recommendation = e.data;
+                getDrink(recommendation.drink);
+                if(recommendationsStorage == null){
+                    recommendationsStorage = {};
+                }
+                recommendationsStorage[title] = e.data;
+                recommendationsStorage = JSON.stringify(recommendationsStorage);
+                localStorage.setItem('recommendations', recommendationsStorage);
+            }, false);
+            recommendationWorker.postMessage(mediaString);
+        }
     });
 }
 
